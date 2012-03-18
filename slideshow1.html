@@ -1,0 +1,38 @@
+<html>
+<head>
+    <script src='slideshow.js'></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(){
+            Slideshow.load();
+        });
+    </script>
+
+    <style>
+        body { overflow-x: hidden; }
+
+        .slide   { position: absolute;
+                   box-sizing: border-box;
+                   background-color: whiteSmoke;
+                   border: 1px solid #ccc;
+                   padding: 2%;
+                   width: 50%;
+                   height: 75%; 
+                   top: 10%; }
+
+        .current { left: 25%; -webkit-transition: left 1s ease-in; }
+        .seen    { left: -40%; -webkit-transition: left 1s ease-in; }
+        .unseen  { left: 90%; -webkit-transition: left 1s ease-in; }
+        .offscreen_n { left: 155%; -webkit-transition: left 1s ease-in; }
+        .offscreen_p { left: -105%; -webkit-transition: left 1s ease-in; }
+    </style>
+
+</head>
+
+<body>
+    <div class='slide'>This is the first slide...</div>
+    <div class='slide'>This is the second slide...</div>
+    <div class='slide'>This is the third slide...</div>
+</body>
+
+</html>
