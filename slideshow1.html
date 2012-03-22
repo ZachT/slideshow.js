@@ -11,28 +11,120 @@
     <style>
         body { overflow-x: hidden; }
 
+        /* Core slideshow framework CSS */
+
         .slide   { position: absolute;
                    box-sizing: border-box;
-                   background-color: whiteSmoke;
-                   border: 1px solid #ccc;
                    padding: 2%;
                    width: 50%;
                    height: 75%; 
                    top: 10%; }
 
-        .current { left: 25%; -webkit-transition: left 1s ease-in; }
-        .seen    { left: -40%; -webkit-transition: left 1s ease-in; }
-        .unseen  { left: 90%; -webkit-transition: left 1s ease-in; }
-        .offscreen_n { left: 155%; -webkit-transition: left 1s ease-in; }
-        .offscreen_p { left: -105%; -webkit-transition: left 1s ease-in; }
+        .thumb   { position: static;
+                   box-sizing: content-box;
+                   float: left; 
+                   width: 10%; 
+                   height: 15%; }
+
+        .current { left: 25%; -webkit-transition: left 1s ease-in-out; }
+        .seen    { left: -40%; -webkit-transition: left 1s ease-in-out; }
+        .unseen  { left: 90%; -webkit-transition: left 1s ease-in-out; }
+        .offscreen_n { left: 155%; -webkit-transition: left 1s ease-in-out; }
+        .offscreen_p { left: -105%; -webkit-transition: left 1s ease-in-out; }
+
+        /**************************************/
+
+        .banner { background-color: #D14836;  
+                  border-style: solid;
+                  border-color: #C03735;
+                  border-width: 1px 1px 0px 1px;
+                  padding: 2%;
+                  box-sizing: border-box;
+                  width: 100%;
+                  min-height: 10%; }
+
+        .slide_content { background-color: whiteSmoke;
+                         border-style: solid;
+                         border-color: #ccc; 
+                         border-width: 0px 1px 1px 1px;
+                         min-height: 90%;
+                         padding: 2%; }
+
     </style>
 
 </head>
 
 <body>
-    <div class='slide'>This is the first slide...</div>
-    <div class='slide'>This is the second slide...</div>
-    <div class='slide'>This is the third slide...</div>
+
+    <div class='slide'>
+        <div class='container'>
+            <div class='banner'>The first slide...</div>
+            <div class='slide_content'>
+                This is some earth shattering content.
+            </div>
+        </div>
+    </div>
+
+    <div class='slide'>
+        <div class='banner'>The second slide...</div>
+        <div class='slide_content'>
+            This is some earth shattering content.
+        </div>
+    </div>
+
+    <div class='slide'>
+        <div class='banner'>The third slide...</div>
+        <div class='slide_content'>
+            This is some earth shattering content.
+        </div>
+    </div>
+
+    <div class='slide'>
+        <div class='container'>
+            <div class='banner'>The first slide...</div>
+            <div class='slide_content'>
+                This is some earth shattering content.
+            </div>
+        </div>
+    </div>
+
+    <div class='slide'>
+        <div class='banner'>The second slide...</div>
+        <div class='slide_content'>
+            This is some earth shattering content.
+        </div>
+    </div>
+
+    <div class='slide'>
+        <div class='banner'>The third slide...</div>
+        <div class='slide_content'>
+            This is some earth shattering content.
+        </div>
+    </div>
+
+    <div class='slide'>
+        <div class='container'>
+            <div class='banner'>The first slide...</div>
+            <div class='slide_content'>
+                This is some earth shattering content.
+            </div>
+        </div>
+    </div>
+
+    <div class='slide'>
+        <div class='banner'>The second slide...</div>
+        <div class='slide_content'>
+            This is some earth shattering content.
+        </div>
+    </div>
+
+    <div class='slide'>
+        <div class='banner'>The third slide...</div>
+        <div class='slide_content'>
+            This is some earth shattering content.
+        </div>
+    </div>
+
 </body>
 
 </html>

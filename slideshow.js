@@ -8,6 +8,10 @@ var Slideshow = function(){
 
         document.addEventListener("keyup", dispatch);
 
+        for (var i = 0, slide; slide = my.slides[i]; i++) {
+            slide.addEventListener("click", select_slide.bind(my, i));
+        }
+
         update_slides();
     }
 
@@ -15,7 +19,17 @@ var Slideshow = function(){
     {
         if (evt.keyCode == "39") { next_slide(); }
         else if (evt.keyCode == "37") { previous_slide(); }
+        else if (evt.keyCode == "38") { thumbify(); }
+        else if (evt.keyCode == "40") { dethumbify(); }
 
+        update_slides();
+    }
+
+    function select_slide(slide_index)
+    {
+        my.current_slide = slide_index;
+
+        dethumbify();
         update_slides();
     }
 
@@ -67,6 +81,16 @@ var Slideshow = function(){
         }
 
         my.current_slide--;
+    }
+
+    function thumbify()
+    {
+        Array.prototype.map.call(my.slides, function(slide){ slide.classList.add("thumb"); });
+    }
+
+    function dethumbify()
+    {
+        Array.prototype.map.call(my.slides, function(slide){ slide.classList.remove("thumb"); });
     }
 
     return { load: load };
