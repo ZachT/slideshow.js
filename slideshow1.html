@@ -8,6 +8,8 @@
         });
     </script>
 
+    <link href="pygment.css" rel="stylesheet" type="text/css"/>
+
     <style>
         body { overflow-x: hidden; }
 
@@ -50,6 +52,13 @@
                          min-height: 90%;
                          padding: 2%; }
 
+        .code { background-color: #efc; 
+                border: 1px solid #ac9;
+                padding: 1%; }
+
+        .banner h1 { font-size: 2em; font-weight: normal; margin: 0px; }
+        .slide_content h2 { font-size: 1.2em; }
+
     </style>
 
 </head>
@@ -58,72 +67,106 @@
 
     <div class='slide'>
         <div class='container'>
-            <div class='banner'>The first slide...</div>
+            <div class='banner'><h1>Python Data Structures</h1></div>
             <div class='slide_content'>
-                This is some earth shattering content.
+                <h2>What is a data structure?</h2>
+    
+                <p>"...a data structure is a particular way of storing and organizing data in a computer so that it can be used efficiently."</p>
+
+                <h2>How do data structures relate to Python?</h2>
+
+                <p>You use data structures in Python every day.</p>
+
+                <ul>
+                    <li>Lists</li>
+                    <li>Tuples</li>
+                    <li>Dictionaries</li>
+                    <li>Sets</li>
+                    <li>And many more...</li>
+                </ul>            
+
+                <h2>What will I learn today?</h2>
+
+                <p>You already use these data structures!  Today we'll learn to think of data structures as distinct tools.<p>
+
+                <ul>
+                    <li>When is the best time to use each?</li>
+                    <li>Are there any features of these structures we were unaware of?</li>
+                </ul>
             </div>
         </div>
     </div>
 
     <div class='slide'>
-        <div class='banner'>The second slide...</div>
+        <div class='banner'><h1>Hello, Lists!</h1></div>
         <div class='slide_content'>
-            This is some earth shattering content.
+            <h2>When should I use a list?</h2>
+
+            <p>Use a list when you need to store and later iterate (for x in my_items:) values in the order they were inserted.</p>
+
+            <p>Lists are great at...</p>
+            
+            <ul>
+                <li>Adding a value to the end (append)</li>
+                <li>Looking up a value using its position in the list ([0], [1], [2], etc...)</li>  
+            </ul>
+
+            <p>Lists are terrible at...</p>
+
+            <ul>
+                <li>Removing a value from the beginning (pop)</li>
+                <li>Looking up values by their content (["a", "b", "c"].index("c"))</li>
+            </ul>
         </div>
     </div>
 
     <div class='slide'>
-        <div class='banner'>The third slide...</div>
+        <div class='banner'><h1>List Features</h1></div>
         <div class='slide_content'>
-            This is some earth shattering content.
-        </div>
-    </div>
+            <h2>List Comprehensions</h2>
 
-    <div class='slide'>
-        <div class='container'>
-            <div class='banner'>The first slide...</div>
-            <div class='slide_content'>
-                This is some earth shattering content.
+            <p>Create a new list in one line!</p>
+    
+            <div class="code">
+                <div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;$&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span> <span class="k">for</span> <span class="n">amt</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">20.36</span><span class="p">,</span> <span class="mf">89.33</span><span class="p">,</span> <span class="mf">90.54</span><span class="p">]]</span></pre></div>
+            </div>
+
+            <h2>Adding Lists Together</h2>
+
+            <p>Put a list inside another as a sublist, or merge its values together.</p>
+
+            <div class="code">
+                <div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;b&quot;</span><span class="p">,</span> <span class="s">&quot;c&quot;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;d&quot;</span><span class="p">,</span> <span class="s">&quot;e&quot;</span><span class="p">,</span> <span class="s">&quot;f&quot;</span><span class="p">]</span>
+
+<span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="c"># [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, [&quot;d&quot;, &quot;e&quot;, &quot;f&quot;]]</span>
+<span class="n">x</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">y</span><span class="p">)</span> <span class="c"># [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>   <span class="c"># [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;]</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">x</span>   <span class="c"># [&quot;d&quot;, &quot;e&quot;, &quot;f&quot;, &quot;a&quot;, &quot;b&quot;, &quot;c&quot;]</span>
+</pre></div>
             </div>
         </div>
     </div>
 
     <div class='slide'>
-        <div class='banner'>The second slide...</div>
+        <div class='banner'><h1>More List Features</h1></div>
         <div class='slide_content'>
-            This is some earth shattering content.
-        </div>
-    </div>
+            <h2>Slicing</h2>
+        
+            <p>Grab sections of a list using slicing.</p>
 
-    <div class='slide'>
-        <div class='banner'>The third slide...</div>
-        <div class='slide_content'>
-            This is some earth shattering content.
-        </div>
-    </div>
+            <div class="code">
+<div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
 
-    <div class='slide'>
-        <div class='container'>
-            <div class='banner'>The first slide...</div>
-            <div class='slide_content'>
-                This is some earth shattering content.
+<span class="n">x</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>    <span class="c"># [1, 2, 3]</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">:]</span>    <span class="c"># [4, 5, 6]</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>   <span class="c"># start inclusive, end exclusive! [2, 3] </span>
+<span class="n">x</span><span class="p">[::</span><span class="mi">2</span><span class="p">]</span>   <span class="c"># use &#39;step&#39; to get odd [1, 3, 5]</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span>  <span class="c"># combine &#39;start&#39; and &#39;step&#39; to get even [2, 4, 6]</span>
+<span class="n">x</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c"># reverse [6, 5, 4, 3, 2 ,1]</span>
+<span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c"># reverse part of list [4, 3, 2, 1]</span>
+</pre></div>
             </div>
-        </div>
-    </div>
-
-    <div class='slide'>
-        <div class='banner'>The second slide...</div>
-        <div class='slide_content'>
-            This is some earth shattering content.
-        </div>
-    </div>
-
-    <div class='slide'>
-        <div class='banner'>The third slide...</div>
-        <div class='slide_content'>
-            This is some earth shattering content.
-        </div>
-    </div>
 
 </body>
 
