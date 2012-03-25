@@ -23,10 +23,11 @@
                    top: 10%; }
 
         .thumb   { position: static;
-                   box-sizing: content-box;
+                   box-sizing: border-box;
                    float: left; 
-                   width: 10%; 
-                   height: 15%; }
+                   margin-bottom: 2%;
+                   width: 20% !important; 
+                   height: 50% !important; }
 
         .current { left: 25%; -webkit-transition: left 1s ease-in-out; }
         .seen    { left: -40%; -webkit-transition: left 1s ease-in-out; }
@@ -98,44 +99,47 @@
     </div>
 
     <div class='slide'>
-        <div class='banner'><h1>Hello, Lists!</h1></div>
-        <div class='slide_content'>
-            <h2>When should I use a list?</h2>
+        <div class='container'>
+            <div class='banner'><h1>Hello, Lists!</h1></div>
+            <div class='slide_content'>
+                <h2>When should I use a list?</h2>
 
-            <p>Use a list when you need to store and later iterate (for x in my_items:) values in the order they were inserted.</p>
+                <p>Use a list when you need to store and later iterate (for x in my_items:) values in the order they were inserted.</p>
 
-            <p>Lists are great at...</p>
-            
-            <ul>
-                <li>Adding a value to the end (append)</li>
-                <li>Looking up a value using its position in the list ([0], [1], [2], etc...)</li>  
-            </ul>
+                <p>Lists are great at...</p>
+                
+                <ul>
+                    <li>Adding a value to the end (append)</li>
+                    <li>Looking up a value using its position in the list ([0], [1], [2], etc...)</li>  
+                </ul>
 
-            <p>Lists are terrible at...</p>
+                <p>Lists are terrible at...</p>
 
-            <ul>
-                <li>Removing a value from the beginning (pop)</li>
-                <li>Looking up values by their content (["a", "b", "c"].index("c"))</li>
-            </ul>
+                <ul>
+                    <li>Removing a value from the beginning (pop)</li>
+                    <li>Looking up values by their content (["a", "b", "c"].index("c"))</li>
+                </ul>
+            </div>
         </div>
     </div>
 
     <div class='slide'>
-        <div class='banner'><h1>List Features</h1></div>
-        <div class='slide_content'>
-            <h2>List Comprehensions</h2>
+        <div class='container'>
+            <div class='banner'><h1>List Features</h1></div>
+            <div class='slide_content'>
+                <h2>List Comprehensions</h2>
 
-            <p>Create a new list in one line!</p>
-    
-            <div class="code">
-                <div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;$&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span> <span class="k">for</span> <span class="n">amt</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">20.36</span><span class="p">,</span> <span class="mf">89.33</span><span class="p">,</span> <span class="mf">90.54</span><span class="p">]]</span></pre></div>
-            </div>
+                <p>Create a new list in one line!</p>
+        
+                <div class="code">
+                    <div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;$&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">amt</span><span class="p">)</span> <span class="k">for</span> <span class="n">amt</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">20.36</span><span class="p">,</span> <span class="mf">89.33</span><span class="p">,</span> <span class="mf">90.54</span><span class="p">]]</span></pre></div>
+                </div>
 
-            <h2>Adding Lists Together</h2>
+                <h2>Adding Lists Together</h2>
 
-            <p>Put a list inside another as a sublist, or merge its values together.</p>
+                <p>Put a list inside another as a sublist, or merge its values together.</p>
 
-            <div class="code">
+                <div class="code">
                 <div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="s">&quot;b&quot;</span><span class="p">,</span> <span class="s">&quot;c&quot;</span><span class="p">]</span>
 <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;d&quot;</span><span class="p">,</span> <span class="s">&quot;e&quot;</span><span class="p">,</span> <span class="s">&quot;f&quot;</span><span class="p">]</span>
 
@@ -144,18 +148,20 @@
 <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>   <span class="c"># [&quot;a&quot;, &quot;b&quot;, &quot;c&quot;, &quot;d&quot;, &quot;e&quot;, &quot;f&quot;]</span>
 <span class="n">x</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">x</span>   <span class="c"># [&quot;d&quot;, &quot;e&quot;, &quot;f&quot;, &quot;a&quot;, &quot;b&quot;, &quot;c&quot;]</span>
 </pre></div>
+                </div>
             </div>
         </div>
     </div>
 
     <div class='slide'>
-        <div class='banner'><h1>More List Features</h1></div>
-        <div class='slide_content'>
-            <h2>Slicing</h2>
-        
-            <p>Grab sections of a list using slicing.</p>
+        <div class='container'>
+            <div class='banner'><h1>More List Features</h1></div>
+            <div class='slide_content'>
+                <h2>Slicing</h2>
+            
+                <p>Grab sections of a list using slicing.</p>
 
-            <div class="code">
+                <div class="code">
 <div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
 
 <span class="n">x</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>    <span class="c"># [1, 2, 3]</span>
@@ -166,7 +172,34 @@
 <span class="n">x</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>  <span class="c"># reverse [6, 5, 4, 3, 2 ,1]</span>
 <span class="n">x</span><span class="p">[</span><span class="mi">3</span><span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c"># reverse part of list [4, 3, 2, 1]</span>
 </pre></div>
+                </div>
             </div>
+        </div>
+    </div>
+
+    <div class='slide'>
+        <div class='container'>
+            <div class='banner'><h1>More List Features</h1></div>
+            <div class='slide_content'>
+                <h2>Slicing</h2>
+            
+                <p>Grab sections of a list using slicing.</p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class='slide'>
+        <div class='container'>
+            <div class='banner'><h1>More List Features</h1></div>
+            <div class='slide_content'>
+                <h2>Slicing</h2>
+            
+                <p>Grab sections of a list using slicing.</p>
+
+            </div>
+        </div>
+    </div>
 
 </body>
 

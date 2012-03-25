@@ -86,11 +86,48 @@ var Slideshow = function(){
     function thumbify()
     {
         Array.prototype.map.call(my.slides, function(slide){ slide.classList.add("thumb"); });
+    
+        var containers = document.querySelectorAll(".container");
+        var font_size = 99;
+        var min_font = 99;
+        var max_height = 0;
+
+        for (var i = 0, container; container = containers[i]; i++) {
+
+            var real_height = parseInt(container.clientHeight, 10);
+            var style_height = parseInt(window.getComputedStyle(my.slides[i]).height, 10);
+            font_size = 99;
+
+            while (real_height > style_height && font_size > 0) {
+                container.style.fontSize = font_size + "%";
+                real_height = parseInt(container.clientHeight, 10);
+
+                font_size--;
+            }
+
+            if (real_height > max_height) {
+                max_height = real_height;
+            }
+
+            if (font_size < min_font) {
+                min_font = font_size;
+            }
+        }
+
+        for (var i = 0, container; container = containers[i]; i++) {
+            container.style.height = max_height + "px";
+            container.style.fontSize = min_font + "%";
+        }
     }
 
     function dethumbify()
     {
-        Array.prototype.map.call(my.slides, function(slide){ slide.classList.remove("thumb"); });
+        var containers = document.querySelectorAll(".container");
+        for (var i = 0; i < my.slides.length; i++) {
+            my.slides[i].classList.remove("thumb");
+            containers[i].style.height = "";
+            containers[i].style.fontSize = "";
+        }
     }
 
     return { load: load };
