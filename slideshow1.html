@@ -179,11 +179,25 @@
 
     <div class='slide'>
         <div class='container'>
-            <div class='banner'><h1>More List Features</h1></div>
+            <div class='banner'><h1>Tuples</h1></div>
             <div class='slide_content'>
-                <h2>Slicing</h2>
-            
-                <p>Grab sections of a list using slicing.</p>
+                <h2>When should I use a tuple?</h2>
+
+                <p>Use a tuple when the contents will not be modified.</p>
+
+                <p>Tuples are great at...</p>
+                
+                <ul>
+                    <li>Using much less memory when compared to a list</li>
+                    <li>Acting as a hashable key for a dictionary</li>  
+                </ul>
+
+                <p>Tuples are terrible at...</p>
+
+                <ul>
+                    <li>Modifying their contents (must be converted to a list)</li>
+                    <li>Looking up values by their content (["a", "b", "c"].index("c"))</li>
+                </ul>           
 
             </div>
         </div>
@@ -191,15 +205,100 @@
 
     <div class='slide'>
         <div class='container'>
-            <div class='banner'><h1>More List Features</h1></div>
+            <div class='banner'><h1>Dictionaries</h1></div>
             <div class='slide_content'>
-                <h2>Slicing</h2>
-            
-                <p>Grab sections of a list using slicing.</p>
+                <h2>When should I use a dictionary?</h2>
+
+                <p>Use a dictionary when you must associate keys to values.</p>
+
+                <p>Dictionaries are great at...</p>
+                
+                <ul>
+                    <li>Looking up values very quickly via a key</li>
+                </ul>
+
+                <p>Dictionaries are terrible at...</p>
+
+                <ul>
+                    <li>Dictionaries use a relatively high amount of memory</li>
+                    <li>Maintaining the order in which keys were inserted</li>
+                </ul>           
+ 
+            </div>
+        </div>
+    </div>
+
+    <div class='slide'>
+        <div class='container'>
+            <div class='banner'><h1>Dictionary Features</h1></div>
+            <div class='slide_content'>
+                <h2>Dictionary Comprehensions</h2>
+
+                <div class="code">
+<div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="p">[(</span><span class="s">&quot;a&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s">&quot;b&quot;</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="s">&quot;c&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">{</span> <span class="n">k</span><span class="p">:</span><span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">x</span> <span class="p">}</span></pre></div>
+                </div>
+
+                <h2>Iterate keys(), items(), values()</h2>
+
+                <div class="code">
+<div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="p">{</span> <span class="s">&quot;a&quot;</span> <span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s">&quot;b&quot;</span><span class="p"> :</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&quot;c&quot;</span> <span class="p">:</span> <span class="mi">3</span> <span class="p">}</span>
+
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">key</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+    <span class="k">print</span> <span class="n">key</span><span class="p">,</span> <span class="n">x</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="k">print</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span>
+
+<span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">x</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+    <span class="k">print</span> <span class="n">value</span>
+</pre></div>
+                </div>
 
             </div>
         </div>
     </div>
+
+    <div class='slide'>
+        <div class='container'>
+            <div class='banner'><h1>More Dictionary Features</h1></div>
+            <div class='slide_content'>
+                <h2>Using .get() to make life easier</h2>
+            
+                <p>Use .get() to write less code.</p>
+
+                <div class="code">
+<div class="highlight"><pre><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;hap&quot;</span><span class="p">,</span> <span class="s">&quot;natalie&quot;</span><span class="p">,</span> <span class="s">&quot;zach&quot;</span><span class="p">,</span> <span class="s">&quot;erik&quot;</span><span class="p">,</span> <span class="s">&quot;thomas&quot;</span><span class="p">,</span> <span class="s">&quot;chris&quot;</span><span class="p">,</span> <span class="s">&quot;chris&quot;</span><span class="p">]</span>
+<span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">softwaredeveloper</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+    <span class="n">d</span><span class="p">[</span><span class="n">softwaredeveloper</span><span class="p">]</span> <span class="o">=</span> <span class="n">d</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">softwaredeveloper</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
+
+    <span class="c">#instead of...</span>
+    <span class="k">if</span> <span class="n">softwaredeveloper</span> <span class="ow">in</span> <span class="n">d</span><span class="p">:</span>
+        <span class="n">d</span><span class="p">[</span><span class="n">softwaredeveloper</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">d</span><span class="p">[</span><span class="n">softwaredeveloper</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="c">#...and instead of...</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">d</span><span class="p">[</span><span class="n">softwaredeveloper</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+        <span class="n">d</span><span class="p">[</span><span class="n">softwaredeveloper</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="k">print</span> <span class="n">d</span>    
+</pre></div>
+                </div>                
+
+
+
+
+            </div>
+        </div>
+    </div> 
 
 </body>
 
